@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Mass with Class Bullies</title>
+   
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+
+        img {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            display: block;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            border-bottom: 0.5px solid #fff; 
+        }
+    </style>
+</head>
+<body>
+
+
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about_us') }}">About Us</a></li>
+            <li><a href="{{ url_for('contact_us') }}">Contact Us</a></li>
+        </ul>
+    </nav>
+    
+
+    <h1>About Mass With Class</h1>
+    
+    <!-- Adding the image -->
+    <img src="/static/IMG_2445%202.jpg" alt="Mass With Class Bullies">
+
+    <p>
+        Located in Utah, Mass With Class Bullies is a family business run by Tyler and his wife Brooke. Together, they have one child who absolutely loves the dogs and gets excited with each new litter of puppies. The dogs are raised in a great environment with plenty of room to roam around outside and spend quality time resting inside. They are exposed to various environments, including interactions with adults, children, older dogs, and even chickens, ensuring they adapt well to diverse situations.
+    </p>
+
+    <footer>
+        <p>&copy; 2024 Mass with Class Bullies</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mass with Class Bullies</title>
+ 
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .dog-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .dog-item {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px;
+            width: 250px;
+            background-color: #fff;
+        }
+
+        img {
+            width: 300px;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about_us') }}">About Us</a></li>
+            <li><a href="{{ url_for('contact_us') }}">Contact Us</a></li>
+        </ul>
+    </nav>
+    
+
+    <h1>Welcome to Mass with Class Bullies</h1>
+
+    <!-- Add the relative path for the image using url_for -->
+    <img src="{{ url_for('static', filename='12715F41-47B3-498E-B564-C5E17FBAEFD2.png') }}" alt="Mass with Class Bullies Image" style="width: 300px; height: auto; border-radius: 5px;">
+
+    <!-- Add the paragraph below the image -->
+    <p>
+        Tyler Everett, at the age of 26, has always had a deep passion for dogs. His journey with dogs started from an early age, and he has accumulated a wealth of experience in their care. Tyler is not just a dog owner; he is a dedicated breeder who understands the intricacies of raising dogs from the ground up.
+
+        Focused on breeding the perfect XL Bully, Tyler has invested time and effort in studying the art and science of dog breeding. His goal is to create a blend that encompasses ideal temperament, health, structure, and muscle. To achieve this, he has utilized top bloodlines from around the world, ensuring the highest standards in his breeding program.
+
+        Located in Utah, Tyler's dogs are not just pets; they are integral members of the family. Raised in an environment surrounded by children, these dogs exhibit excellent behavior from their puppy days to adulthood. They are not only comfortable around kids but also protective of them in appropriate situations.
+    </p>
+
+    <footer>
+        <p>&copy; 2024 Mass with Class Bullies</p>
+    </footer>
+</body>
+</html>
