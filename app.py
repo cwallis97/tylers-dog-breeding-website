@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash, session
 from models import connect_to_db  # Assuming you have a connect_to_db function in models
 from crud import create_user, delete_user, update_user, verify_user_password
 from send_email import send_email
@@ -29,7 +29,7 @@ def contact_us():
         phone_number = request.form.get('phone_number')
         note = request.form.get('message')   
 
-        send_email(email, phone_number, note)
+        send_email(email, phone_number)
         return redirect("/thank_you")
     
     return render_template('contact_us.html')
@@ -38,6 +38,31 @@ def contact_us():
 def thank_you():
     return render_template('thank_you.html')
 
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        email = request.form.get('email')
+        password = request.form.get('password')
+
+        if verify_user_password(email, password):
+            session['user_email'] = email
+            flash('Login successful!', 'success')
+            return redirect(url_for('home'))
+        else:
+            flash('Invalid email or password', 'error')
+
+    return render_template('login.html')
+
+
+@app.route('/create-user', methods=['POST'])
+def create_user():
+    email = request.form.get('email')
+    password = request.form.get('password')
+    firstname = request.form.get('firstname')
+    lastname = request.form.get('lastname')
+    create_user(email,password,firstname,lastname)
+    return redirect('/')
+
 if __name__ == '__main__':
     connect_to_db(app)
-    app.run(port=5001) 
+    app.run(port=5001)

@@ -44,3 +44,20 @@ def verify_user_password(email, password):
             return False
     else:
         return False
+
+
+
+def get_user_by_username(username):
+    """get user by username"""
+    return User.query.filter_by(username=username).first()
+
+def verify_user_password(username, password):
+    """check that user password matches what's saved"""
+    user = User.query.filter_by(username=username).first()
+    if user:
+        if user.password == password:
+            return True
+        else:
+            return False
+    else:
+        return False
