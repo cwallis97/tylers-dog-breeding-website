@@ -1,5 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
-from models import model, crud
+
 
 db = SQLAlchemy()
 
